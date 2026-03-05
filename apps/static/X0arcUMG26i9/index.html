@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=240, height=320, user-scalable=no, initial-scale=1.0">
+    <title>comma connect</title>
+  <script type="module" crossorigin src="./assets/main-CFXav9E_.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-BLx9VJsX.css">
+</head>
+<body>
+    <div id="app">
+        <div id="loading-screen">
+            <div class="spinner"></div>
+            <p class="loading-text">Loading comma connect…</p>
+        </div>
+
+        <div id="error-screen" class="hidden">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="#FE5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <p class="error-title">Page could not load</p>
+            <p class="error-subtitle">Check your internet connection and try again.</p>
+            <button id="refresh-btn">
+                <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 4 23 10 17 10"/>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                </svg>
+                Refresh
+            </button>
+        </div>
+
+        <iframe id="webview" class="hidden" src="about:blank" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox" allow="geolocation; camera; microphone"></iframe>
+    </div>
+</body>
+</html>
