@@ -1,15 +1,26 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import solid from 'vite-plugin-solid'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+// Stripped-down vite config for Rabbit R1 — no Sentry, no PWA, no devtools
 export default defineConfig({
+  plugins: [
+    solid({ ssr: false }),
+  ],
   base: './',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html')
-      }
-    }
-  }
+    target: 'esnext',
+  },
+  resolve: {
+    alias: {
+      '~': path.resolve(__dirname, 'src'),
+    },
+  },
+  server: {
+    port: 3000,
+  },
 })
